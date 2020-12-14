@@ -19,3 +19,6 @@ Studying Flask for Backend Web Development
 Studying Flask for Backend Web Development
 - [x] Installed WTForms
 - [x] Created Login and Regsiter Forms via WTForms
+- [x] Ensured error check logics on login and registration forms
+- [x] Updated Nav links using url_for()
+ 
