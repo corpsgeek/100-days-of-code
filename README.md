@@ -14,3 +14,8 @@
 Studying Flask for Backend Web Development
 - [x] Installing and Configuring Flask environmental variables
 - [x] Working with Jinja Templates and routes
+
+### Day 2
+Studying Flask for Backend Web Development
+- [x] Installed WTForms
+- [x] Created Login and Regsiter Forms via WTForms
