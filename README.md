@@ -21,4 +21,8 @@ Studying Flask for Backend Web Development
 - [x] Created Login and Regsiter Forms via WTForms
 - [x] Ensured error check logics on login and registration forms
 - [x] Updated Nav links using url_for()
+
+### Day 3
+- [x] Studied on Databases for Flask
+- [x] Understand the concept of a one to many relationship
  
