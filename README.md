@@ -25,4 +25,9 @@ Studying Flask for Backend Web Development
 ### Day 3
 - [x] Studied on Databases for Flask
 - [x] Understand the concept of a one to many relationship
- 
+
+### Day 4
+- [x] Understand the concept of a one to one relationship
+- [x] Understand the concept of a many to many relationship
+- [x] Installed flask sqlalchemy and initiated a database connection
+- [x] Created a User model
