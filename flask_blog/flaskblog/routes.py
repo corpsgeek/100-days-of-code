@@ -1,29 +1,7 @@
-from flask import Flask
 from flask import render_template, flash, redirect, request, url_for
-from forms import RegistrationForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy 
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '58cc222d9a3993951da4cc75357b3f6d'
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite///site.db'
-db = SQLAlchemy(app)
-
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(20), unique = True, nullable = False)
-    email = db.Column(db.String(120), unique = True, nullable = False)
-    image_file = db.Column(db.String(20), nullable = False, default='default.jpg')
-    password = db.Column(db.String(60), nullable = False)
-
-    def __repr__(self):
-        return "User(" + str(self.username) + ',' + str(self.email) + ',' + str(self.image_file) + ")"
-
-#TODO: Create post table
-
-
-
-
+from flaskblog.forms import RegistrationForm, LoginForm
+from flaskblog.models import User,Posts 
+from flaskblog import app
 
 posts = [
     {
@@ -70,6 +48,3 @@ def login():
         
     return render_template('login.html', title='Log in', form=form)
 
-
-if __name__ == "__main__":
-    app.run(debug=True) 

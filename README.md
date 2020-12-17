@@ -31,3 +31,7 @@ Studying Flask for Backend Web Development
 - [x] Understand the concept of a many to many relationship
 - [x] Installed flask sqlalchemy and initiated a database connection
 - [x] Created a User model
+
+### Day 5
+- [x] Created Post model and established a one-to-many relationship with the User model
+- [x] Transitioned the application structure from modules to package structure
