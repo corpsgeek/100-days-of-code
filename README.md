@@ -45,3 +45,9 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Processed password security via flask bcrypt hashing tool
 - [x] Wrote the logic for user registration validation error for already existing data in database
 - [x] Committed registration data to database 
+- [x] Wrote the login logic using flask-login extension
+- [x] Changed values of the nav menu to reflect changes in user session
+- [x] Created an account route for the current user session
+- [x] Updated the login route to redirect user to restricted pages after login
+- [x] Created the logout functionality
+- [x] Completed user authentication logic for this web app
