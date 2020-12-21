@@ -35,3 +35,13 @@ Studying Flask for Backend Web Development
 ### Day 5
 - [x] Created Post model and established a one-to-many relationship with the User model
 - [x] Transitioned the application structure from modules to package structure
+
+
+I skipped 2 days, due to factors beyond my control. But, i am back and making progress.
+
+
+### Day 6
+- [x] Processed User registration authentication logic
+- [x] Processed password security via flask bcrypt hashing tool
+- [x] Wrote the logic for user registration validation error for already existing data in database
+- [x] Committed registration data to database 
