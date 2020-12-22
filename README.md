@@ -51,3 +51,9 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Updated the login route to redirect user to restricted pages after login
 - [x] Created the logout functionality
 - [x] Completed user authentication logic for this web app
+  
+### Day 7
+- [x] Wrote the complete logic for user profile
+- [x] Added feature to upload profile picture and change account details
+- [x] Implemented Pillow package to scale down file size for improved web app performance
+
