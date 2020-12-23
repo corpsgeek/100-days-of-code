@@ -57,3 +57,7 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Added feature to upload profile picture and change account details
 - [x] Implemented Pillow package to scale down file size for improved web app performance
 
+### Day 8
+- [x] Performed CRUD operation for user post
+- [x] Wrote the application logic for updating, deleting and view posts.
+
