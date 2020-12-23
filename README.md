@@ -60,4 +60,7 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 ### Day 8
 - [x] Performed CRUD operation for user post
 - [x] Wrote the application logic for updating, deleting and view posts.
+- [x] Added pagination feature to blog posts
+- [x] Created individual user post view
+- [x] Completely implemented the post feature of the web application
 
