@@ -1,0 +1,110 @@
+{% extends "base/public_template.html" %}
+
+
+{% block scripts %}
+<!--script-->
+<script src="{{url_for('static', filename='js/modernizr.custom.97074.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.chocolat.js')}}"></script>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/chocolat.css')}}" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('.gallery a').Chocolat();
+		});
+		</script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery.hoverdir.js')}}"></script>
+{% endblock scripts %}
+
+
+{% block nav %}
+    
+<div class="header">
+	<div class="container">
+		<div class="head">
+			<div class="navigation">
+				<span class="menu"></span>
+				<ul class="navig">
+					<li><a href="index.html" class="active">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Register</a></li>
+					<li><a href="contact.html">Log in</a></li>
+				</ul>
+			</div>
+			<div class="header-right">
+				<div class="search-bar">
+					<input type="text" value="Search" onfocus="this.value = '';"
+						onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" value="">
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>     
+{% endblock %}
+
+{% block gallery %}
+<div class="gallery">
+    <div class="container">
+        <div class="gallery-top heading">
+            <h3>OUR GALLERY</h3>
+        </div>
+        <section>
+            <ul id="da-thumbs" class="da-thumbs">
+                <li>
+                    <a href="images/g-1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <img src="{{url_for('static', filename='images/g-3.jpg')}}" alt="" />
+                        <div>
+                            <h5>Coffee</h5>
+                            <span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/g-2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <img src="{{url_for('static', filename='images/g-3.jpg')}}" alt="" />
+                        <div>
+                            <h5>Coffee</h5>
+                            <span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="images/g-3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <img src="{{url_for('static', filename='images/g-3.jpg')}}" alt="" />
+                        <div>
+                            <h5>Coffee</h5>
+                            <span>non suscipit leo fringilla non suscipit leo fringilla molestie</span>
+                        </div>
+                    </a>
+                </li>
+
+                <div class="clearfix"> </div>
+            </ul>
+        </section>
+
+        <script type="text/javascript">
+            $(function() {
+
+                $(' #da-thumbs > li ').each(function() {
+                    $(this).hoverdir();
+                });
+
+            });
+        </script>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %} 
+<div class="footer">
+	<div class="container">
+		<div class="footer-text">
+			<p>© 2015 Coffee Break. All Rights Reserved | Design by <a href="http://w3layouts.com/"
+					target="_blank">W3layouts</a> </p>
+		</div>
+	</div>
+</div>
+{% endblock %}
