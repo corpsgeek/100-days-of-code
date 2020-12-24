@@ -6,7 +6,8 @@
 - [ ] Develop Projects
 
 # Active projects in progress: yet to be completed
-- [ ] Flask Blog App
+- [x] Flask Mini Blog App
+- [x] A Blog app
 
 ## Code Logs
 
@@ -63,4 +64,5 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Added pagination feature to blog posts
 - [x] Created individual user post view
 - [x] Completely implemented the post feature of the web application
+- [x] Completed my flask mini blog app.
 
