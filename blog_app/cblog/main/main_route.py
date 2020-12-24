@@ -1,5 +1,5 @@
 #import flask blueprint and render template
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, url_for, flash
 
 #initialize blueprint, declaring template and static folder
 #set static url path as assets

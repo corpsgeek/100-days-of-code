@@ -67,7 +67,10 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Completed my flask mini blog app.
 
 ### Day 9 (Started working on a full scale project in blog_app)
+- [x] Created a new branch blog_app for blog_app developement
 - [x] Downloaded and cleaned an html template from w3schools
 - [x] Set up application structure, buleprints for app component in blog_app 
 - [x] Set up routes, registration and log in form for the blog posts
 - [x] Installed flask wtforms  
+- [x] Created blog database
+- [x] Handled form errors for registration and login page 

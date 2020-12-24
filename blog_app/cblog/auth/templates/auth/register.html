@@ -12,6 +12,8 @@
 {% endblock %}
 
 
+
+<!--registration page nav menu logic-->
 {% block nav %}
 <div class="header">
     <div class="container">
@@ -19,12 +21,12 @@
             <div class="navigation">
                 <span class="menu"></span>
                 <ul class="navig">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="contact.html">Register</a></li>
-                    <li><a href="contact.html">Log in</a></li>
+                    <li><a href="{{url_for('main_bp.index')}}">Home</a></li>
+                    <li><a href="{{url_for('main_bp.about')}}">About</a></li>
+                    <li><a href="{{url_for('main_bp.gallery')}}">Gallery</a></li>
+                    <li><a href="{{url_for('main_bp.contact')}}">Contact</a></li>
+                    <li><a href="{{url_for('auth_bp.register')}}" class="active">Register</a></li>
+                    <li><a href="{{url_for('auth_bp.login')}}">Log in</a></li>
                 </ul>
             </div>
             <div class="header-right">
@@ -53,55 +55,120 @@
                     <p>Lorem, ipsum dolor.</p>
                 </div>
                 <div class="col-md-9">
-                    <form action="" method="get">
+                    <!--registration form posting data to auth_route-->
+                    <form action="" method="POST">
+                        {{form.hidden_tag()}}
                         <div class="row mb-3">
-                            <div class="row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-lg">Username</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="colFormLabelLg"
-                                        placeholder="">
-                                </div>
+                            
+                            <!--Username form logic start-->
+                            <div class="row form-group">
+                                {{form.username.label(class="form-control-label  col-sm-2 col-form-label col-form-label-lg")}}
+                                {% if form.username.errors %}
+                                    <div class="col-sm-10">
+                                        {{form.username(class="form-control form-control-lg is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.username.errors %}
+                                            <span>{{error}}</span>
+                                        {% endfor %}
+                                        </div>
+                                        
+                                    </div>     
+                                {% else %}
+                                    <div class="col-sm-10">
+                                        {{form.username(class="form-control form-control-lg")}}
+                                    </div>
+                                {% endif %}  
                             </div>
+                            <!--Username form logic end-->
+
                             <br />
-                            <div class="row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-lg">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-lg" id="colFormLabelLg"
-                                        placeholder="">
-                                </div>
+
+                            <!--Email form logic start-->
+                            <div class="row form-group">
+                                {{form.email.label(class="form-control-label  col-sm-2 col-form-label col-form-label-lg")}}
+                                {% if form.email.errors %}
+                                    <div class="col-sm-10">
+                                        {{form.email(class="form-control form-control-lg is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.email.errors %}
+                                            <span>{{error}}</span>
+                                        {% endfor %}
+                                        </div>
+                                        
+                                    </div>     
+                                {% else %}
+                                    <div class="col-sm-10">
+                                        {{form.email(class="form-control form-control-lg")}}
+                                    </div>
+                                {% endif %}  
                             </div>
+                            <!--Email form logic end-->
                             <br />
-                            <div class="row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-lg">Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control form-control-lg" id="colFormLabelLg"
-                                        placeholder="">
-                                </div>
+
+                            <!--Password form logic start-->
+                            <div class="row form-group">
+                                {{form.password.label(class="form-control-label  col-sm-2 col-form-label col-form-label-lg")}}
+                                {% if form.password.errors %}
+                                    <div class="col-sm-10">
+                                        {{form.password(class="form-control form-control-lg is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.password.errors %}
+                                            <span>{{error}}</span>
+                                        {% endfor %}
+                                        </div>
+                                        
+                                    </div>     
+                                {% else %}
+                                    <div class="col-sm-10">
+                                        {{form.password(class="form-control form-control-lg")}}
+                                    </div>
+                                {% endif %}  
                             </div>
+                            <!--Password form logic end-->
+
                             <br />
-                            <div class="row">
-                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Confirm
-                                    Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control form-control-lg" id="colFormLabelLg"
-                                        placeholder="">
-                                </div>
+
+                            <!--Confirm Password form logic start-->
+                            <div class="row form-group">
+                                {{form.confirm_password.label(class="form-control-label  col-sm-2 col-form-label col-form-label-lg")}}
+                                {% if form.confirm_password.errors %}
+                                    <div class="col-sm-10">
+                                        {{form.confirm_password(class="form-control form-control-lg is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.confirm_password.errors %}
+                                            <span>{{error}}</span>
+                                        {% endfor %}
+                                        </div>
+                                        
+                                    </div>     
+                                {% else %}
+                                    <div class="col-sm-10">
+                                        {{form.confirm_password(class="form-control form-control-lg")}}
+                                    </div>
+                                {% endif %}  
                             </div>
+                            <!--Confirm Password form logic end-->
                             <br />
+
                             <div class="row">
                                 <div class="submit-btn col-sm-9">
-
-                                    <input type="submit" value="Sign Up">
-
+                                    {{form.sign_up()}}
                                 </div>
                             </div>
+                            <br />
+                            <div class="border-top border-bottom pt-3">
+                                <small class="text-muted">
+                                    Already Have An Account? <a class="ml-2" href="{{url_for('auth_bp.login')}}">Sign in</a>
+                                </small>
+                            </div>
+                        </div>
 
                         </div>
                     </form>
                 </div>
+                
+                <div>
+                    
                 <div class="clearfix"></div>
             </div>
         </div>
