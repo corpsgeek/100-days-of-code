@@ -1,0 +1,93 @@
+{% extends "base/public_template.html" %}
+
+{% block nav %}
+    
+<div class="header">
+	<div class="container">
+		<div class="head">
+			<div class="navigation">
+				<span class="menu"></span>
+				<ul class="navig">
+					<li><a href="index.html" class="active">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+					<li><a href="contact.html">Register</a></li>
+					<li><a href="contact.html">Log in</a></li>
+				</ul>
+			</div>
+			<div class="header-right">
+				<div class="search-bar">
+					<input type="text" value="Search" onfocus="this.value = '';"
+						onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" value="">
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>     
+{% endblock %}
+
+{% block about_welcome %}
+<!--welcome-starts-->
+<div class="welcome">
+    <div class="container">
+        <div class="welcome-top heading">
+            <h3>WELCOME</h3>
+            <div class="welcome-bottom">
+                <img src="images/abt-1.jpg" alt=""/>
+                <p>Vivamus interdum diam diam, non faucibus tortor consequat vitae. Proin sit amet augue sed massa pellentesque viverra. Suspendisse iaculis purus eget est pretium aliquam ut sed diam. Nullam non magna lobortis, faucibus erat eu, consequat justo. Suspendisse commodo nibh odio, vel elementum nulla luctus sit amet.</p>
+                <p>Nulla in tempor lectus. Etiam ac mauris lacinia nulla ultricies porta sit amet eleifend ligula. Quisque tincidunt vitae turpis at efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sagittis, magna a sagittis dapibus, ipsum metus interdum lectus, quis feugiat leo ipsum nec diam.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--welcome-end-->
+
+{% endblock %}
+
+
+{% block about_team %}
+<div class="team">
+    <div class="container">
+    <div class="team-top heading">
+        <h3>OUR TEAM</h3>
+    </div>
+        <div class="team-bottom">
+            <div class="col-md-3 team-left">
+                <img src="images/t-1.jpg" alt="" />
+                <h4>Rita Nelson</h4>
+                <p>Fusce at elementum diam. Integer pellentesque ultricies pharetra.</p>
+            </div>
+            <div class="col-md-3 team-left">
+                <img src="images/t-2.jpg" alt="" />
+                <h4>Marta Healy</h4>
+                <p>Fusce at elementum diam. Integer pellentesque ultricies pharetra.</p>
+            </div>
+            <div class="col-md-3 team-left">
+                <img src="images/t-3.jpg" alt="" />
+                <h4>John Black</h4>
+                <p>Fusce at elementum diam. Integer pellentesque ultricies pharetra.</p>
+            </div>
+            <div class="col-md-3 team-left">
+                <img src="images/t-4.jpg" alt="" />
+                <h4>Kate Tompson</h4>
+                <p>Fusce at elementum diam. Integer pellentesque ultricies pharetra.</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %} 
+<div class="footer">
+	<div class="container">
+		<div class="footer-text">
+			<p>© 2015 Coffee Break. All Rights Reserved | Design by <a href="http://w3layouts.com/"
+					target="_blank">W3layouts</a> </p>
+		</div>
+	</div>
+</div>
+{% endblock %}

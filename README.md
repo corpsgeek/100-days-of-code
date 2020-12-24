@@ -7,7 +7,7 @@
 
 # Active projects in progress: yet to be completed
 - [x] Flask Mini Blog App
-- [x] A Blog app
+- [ ] A Coffee Blog app
 
 ## Code Logs
 
@@ -66,3 +66,8 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Completely implemented the post feature of the web application
 - [x] Completed my flask mini blog app.
 
+### Day 9 (Started working on a full scale project in blog_app)
+- [x] Downloaded and cleaned an html template from w3schools
+- [x] Set up application structure, buleprints for app component in blog_app 
+- [x] Set up routes, registration and log in form for the blog posts
+- [x] Installed flask wtforms  
