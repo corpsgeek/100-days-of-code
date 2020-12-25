@@ -74,3 +74,7 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 - [x] Installed flask wtforms  
 - [x] Created blog database
 - [x] Handled form errors for registration and login page 
+
+### Day 10
+- [x] Fixed Circula import issue in blueprints
+- [x] Handle user registration logic from and to database
