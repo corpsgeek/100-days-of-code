@@ -1,19 +1,22 @@
-from cblog import db
+#db imports
+from flask_sqlalchemy import SQLAlchemy
+
 from datetime import datetime
 
+db = SQLAlchemy()
 
 # database User table
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True, nullable=False)
-    username = db.Column(db.String, unique=True, nullable=False)
-    email = db.Column(db.String, unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True, nullable=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    username = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
     # has relationship with posts
     posts = db.relationship('Post', backref='author', lazy=True)
 
-    def __repr__(self):
+    def __repr__(self):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         return "User(" + str(self.username) + ',' + str(self.email) +")"
-        
+
 
 # database Post table
 class Post(db.Model):
@@ -25,7 +28,7 @@ class Post(db.Model):
     image = db.Column(db.String, nullable=False, default='default.jpg')
     clicks = db.Column(db.Integer, nullable=True, default=0)
     # create a virtual column in the user table
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     #create a virtual column in the comment table
     comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'), nullable = False) 
 
@@ -43,4 +46,4 @@ class Comment(db.Model):
 
     def __repr__(self):
         return "User(" + str(self.name) + ',' + str(self.message) +")"
-    
+
