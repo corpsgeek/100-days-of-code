@@ -1,12 +1,18 @@
 #db imports
 from flask_sqlalchemy import SQLAlchemy
-
+from cblog.auth import login_manager
+from flask_login import UserMixin
 from datetime import datetime
 
 db = SQLAlchemy()
 
+#user loader required
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 # database User table
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, nullable=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     username = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)

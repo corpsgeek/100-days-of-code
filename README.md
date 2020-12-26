@@ -78,3 +78,6 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 ### Day 10
 - [x] Fixed Circula import issue in blueprints
 - [x] Handle user registration logic from and to database
+
+### Day 11
+- [x] Fully implemented the authorization feature of the webapp

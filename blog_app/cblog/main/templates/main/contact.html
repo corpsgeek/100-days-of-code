@@ -8,12 +8,25 @@
 			<div class="navigation">
 				<span class="menu"></span>
 				<ul class="navig">
+                    {% if current_user.is_authenticated  %}
 					<li><a href="{{url_for('main_bp.index')}}" >Home</a></li>
                     <li><a href="{{url_for('main_bp.about')}}" >About</a></li>
-                    <li><a href="{{url_for('main_bp.gallery')}}">Gallery</a></li>
+                    <li><a href="{{url_for('main_bp.gallery')}}" >Gallery</a></li>
+                    <li><a href="{{url_for('main_bp.contact')}}" class="active">Contact</a></li>
+                    <li><a href="{{url_for('auth_bp.profile')}}">Profile</a></li>
+                    <li><a href="{{url_for('auth_bp.logout')}}">Log out</a></li>
+                    <li><a href="{{url_for('auth_bp.post')}}">Write post</a></li>
+					{% else %}
+					<li><a href="{{url_for('main_bp.index')}}" >Home</a></li>
+                    <li><a href="{{url_for('main_bp.about')}}" >About</a></li>
+                    <li><a href="{{url_for('main_bp.gallery')}}" >Gallery</a></li>
                     <li><a href="{{url_for('main_bp.contact')}}" class="active">Contact</a></li>
                     <li><a href="{{url_for('auth_bp.register')}}">Register</a></li>
                     <li><a href="{{url_for('auth_bp.login')}}">Log in</a></li>
+
+					{% endif %}
+					
+
 				</ul>
 			</div>
 			<div class="header-right">
