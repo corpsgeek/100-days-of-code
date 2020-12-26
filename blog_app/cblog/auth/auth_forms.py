@@ -25,6 +25,6 @@ class AuthRegistrationForm(FlaskForm):
 
 
 class AuthLoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=5)])
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=25)])
     password = PasswordField('Password', validators=[DataRequired()])
     log_in = SubmitField('Log In')

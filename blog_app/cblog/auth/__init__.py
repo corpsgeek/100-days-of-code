@@ -5,5 +5,9 @@
 
 #import password encryption
 from flask_bcrypt import Bcrypt 
-
 bcrypt = Bcrypt()
+
+
+#import login manager
+from flask_login import LoginManager
+login_manager = LoginManager()
