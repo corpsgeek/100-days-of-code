@@ -81,3 +81,7 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 
 ### Day 11
 - [x] Fully implemented the authorization feature of the webapp
+
+### Day 12
+- [x] Fully implemented the user profile logic
+- [x] Implemened the write post wysiwyg feature via summer note 

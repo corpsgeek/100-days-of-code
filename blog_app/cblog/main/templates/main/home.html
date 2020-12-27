@@ -23,9 +23,8 @@
                     <li><a href="{{url_for('main_bp.about')}}" >About</a></li>
                     <li><a href="{{url_for('main_bp.gallery')}}" >Gallery</a></li>
                     <li><a href="{{url_for('main_bp.contact')}}" >Contact</a></li>
-                    <li><a href="{{url_for('auth_bp.profile')}}">Profile</a></li>
+                    <li><a href="{{url_for('user_bp.profile')}}">Profile</a></li>
 					<li><a href="{{url_for('auth_bp.logout')}}">Log out</a></li>
-					<li><a href="{{url_for('auth_bp.post')}}">Write post</a></li>
 					{% else %}
 					<li><a href="{{url_for('main_bp.index')}}" class="active">Home</a></li>
                     <li><a href="{{url_for('main_bp.about')}}" >About</a></li>

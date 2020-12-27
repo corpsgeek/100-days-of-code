@@ -2,6 +2,8 @@ from flask import Flask, Blueprint
 #import main routes blueprint
 from cblog.main.main_route import main_bp
 from cblog.auth.auth_route import auth_bp
+from cblog.user.user_route import user_bp
+from cblog.posts.posts_route import post_bp
 
 #importing init files to avoid circular imports
 from cblog.auth import bcrypt, login_manager
@@ -33,3 +35,5 @@ login_manager.login_message_category = 'info'
 #register main blueprints
 app.register_blueprint(main_bp, url_prefix='/')
 app.register_blueprint(auth_bp, url_prefix='/')
+app.register_blueprint(user_bp, url_prefix="/")
+app.register_blueprint(post_bp, url_prefix="/")
