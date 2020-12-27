@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Block - Profile</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+
+</head>
+
+<body>
+
+  <body>
+    <div class="main-content">
+
+
+
+
+      <!-- Header -->
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+        style="min-height: 600px; background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid d-flex align-items-center">
+          <div class="row">
+            <div class="col-lg-7 col-md-10">
+              <h1 class="display-2 text-white">Welcome back, {{ current_user.username }}</h1>
+              <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your
+                posts and manage your coffee diary</p>
+              
+             
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page content -->
+      <div class="container-fluid mt--7">
+        <div class="row">
+          <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+            <div class="card card-profile shadow">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+
+                </div>
+              </div>
+
+              <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                  <div class="col">
+                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                      {% if current_user.is_authenticated  %}
+
+                      <div>
+                        <a href="{{url_for('main_bp.index')}}" class="description">Home</a>
+                      </div>
+
+                      <div>
+                        <a href="{{url_for('user_bp.profile')}}" class="description">Profile</a>
+                      </div>
+
+                      <div>
+                        <a href="{{url_for('auth_bp.logout')}}" class="description">Logout</a>
+                      </div>
+
+                      <div>
+                        <a class="description" href="{{url_for('post_bp.post')}}">Writepost</a>
+                      </div>
+
+                      {% endif %}
+
+                      <div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h3>
+                    {{current_user.username}}<span class="font-weight-light">, (number of posts)</span>
+                  </h3>
+                  <hr class="my-4">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+              <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h3 class="mb-0">My account</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <form action="" method="post">
+                  <h6 class="heading-small text-muted mb-4">User information</h6>
+                  {{form.hidden_tag()}}
+                  <div class="pl-lg-4">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group focused">
+                          {{form.username.label(class="form-control-label")}}
+                          {% if form.username.errors %}
+                            {{form.username(class="form-control form-control-alternative is-invalid")}}
+                              {% for error in form.username.errors %}
+                                  <div class="invalid-feedback">
+                                      <span>{{error}}</span>
+                                  </div>
+                              {% endfor %}
+                            {% else %}
+                            {{form.username(class="form-control form-control-alternative")}}
+                          {% endif %}
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          {{form.email.label(class="form-control-label")}}
+                          {% if form.email.errors %}
+                            {{form.email(class="form-control form-control-alternative is-invalid")}}
+                              {% for error in form.email.errors %}
+                                  <div class="invalid-feedback">
+                                      <span>{{error}}</span>
+                                  </div>
+                              {% endfor %}
+                            {% else %}
+                            {{form.email(class="form-control form-control-alternative")}}
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group focused">
+                          {{form.password.label(class="form-control-label")}}
+                          {% if form.password.errors %}
+                          {{form.password(class="form-control form-control-alternative is-invalid")}}
+                            {% for error in form.password.errors %}
+                                <div class="invalid-feedback">
+                                    <span>{{error}}</span>
+                                </div>
+                            {% endfor %}
+                          {% else %}
+                          {{form.password(class="form-control form-control-alternative")}}
+                        {% endif %}
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group focused">
+                          {{form.confirm_password.label(class="form-control-label")}}
+                          {% if form.confirm_password.errors %}
+                          {{form.confirm_password(class="form-control form-control-alternative is-invalid")}}
+                            {% for error in form.confirm_password.errors %}
+                                <div class="invalid-feedback">
+                                    <span>{{error}}</span>
+                                </div>
+                            {% endfor %}
+                          {% else %}
+                          {{form.confirm_password(class="form-control form-control-alternative")}}
+                        {% endif %}
+                        </div>
+                      </div>
+                      {{form.edit_profile(class="btn btn-info")}}
+                    </div>
+                  </div>
+                  <hr class="my-4">
+                  <!-- Address -->
+                  <h6 class="heading-small text-muted mb-4">Your Coffee Posts </h6>
+                  <div class="pl-lg-4">
+                  
+                  </div>
+                  <hr class="my-4">
+                  <div class="pl-lg-4">
+                    <div class="form-group focused">
+                      <label>Post Title</label>
+                      <p><a href="">View post</a></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="row align-items-center justify-content-xl-between">
+        <div class="col-xl-6 m-auto text-center">
+          <div class="copyright">
+            <p>Made with <a href="https://www.creative-tim.com/product/argon-dashboard" target="_blank">Argon
+                Dashboard</a> by Creative Tim</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+
+</body>
+
+</html>

@@ -62,8 +62,3 @@ def logout():
     logout_user()
     return redirect(url_for('main_bp.index'))
 
-@auth_bp.route('/profile')
-@login_required
-def profile():
-   
-    return "user profile"
