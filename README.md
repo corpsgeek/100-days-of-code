@@ -85,3 +85,5 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 ### Day 12
 - [x] Fully implemented the user profile logic
 - [x] Implemened the write post wysiwyg feature via summer note 
+
+I am not journaling an entry for day 13, no feature has been implemented yet. I am still finding it difficult to implement the post page logic with summernote 
