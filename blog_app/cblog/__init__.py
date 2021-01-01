@@ -5,11 +5,14 @@ from cblog.auth.auth_route import auth_bp
 from cblog.user.user_route import user_bp
 from cblog.posts.posts_route import post_bp
 
+
+
 #importing init files to avoid circular imports
 from cblog.auth import bcrypt, login_manager
+
 from cblog.models import db   
 
-
+ 
 app = Flask(__name__)
 #load database
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///cblog.db'
@@ -22,9 +25,13 @@ app.config["SECRET_KEY"] = "0cbce54cd80f3448e3d5d6bf5a056731"
 db.init_app(app)
 db.app = app    
 
+
 #password manager 
 bcrypt.init_app(app)
 bcrypt.app = app 
+
+
+
 
 #login manager feature initialization
 login_manager.init_app(app)
