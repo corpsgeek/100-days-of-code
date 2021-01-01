@@ -85,3 +85,10 @@ I skipped 2 days, due to factors beyond my control. But, i am back and making pr
 ### Day 12
 - [x] Fully implemented the user profile logic
 - [x] Implemened the write post wysiwyg feature via summer note 
+
+### Day 13
+- [x] Reversed wysiwyg feature via summer note due to conflict in sending post images to routes, could be probably fixed in a later version.
+- [x] Created a new post form that accepts only png, jpeg and jpg as file extensions
+- [x] Wrote the logic to publish posts and post image
+- [x] Update the database to fix sqlalchemy integrity error due to inappropriate table relationship between posts and comment.
+  
