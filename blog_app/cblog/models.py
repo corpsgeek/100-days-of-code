@@ -36,7 +36,7 @@ class Post(db.Model):
     # create a virtual column in the user table
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     #create a virtual column in the comment table
-    comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'), nullable = False) 
+    comment_id = db.relationship('Comment', backref='commentary', lazy = True) 
 
     def __repr__(self):
         return "User(" + str(self.title) + ',' + str(self.dateposted) +")"
@@ -48,7 +48,7 @@ class Comment(db.Model):
     name =  db.Column(db.String, nullable = False)
     message = db.Column(db.Text, nullable = False)
     #comment has relationship with posts
-    posts = db.relationship('Post', backref='commentary', lazy = True)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable= False)
 
     def __repr__(self):
         return "User(" + str(self.name) + ',' + str(self.message) +")"
